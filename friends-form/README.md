@@ -16,4 +16,5 @@
 
 
 ### Let's Do It
--[ ] In html file add input with submit button
+- [x] In html file add inputs for the: First name, Last Name, Email, Phone number  with submit button
+- [x] Add  select input for the languages 
