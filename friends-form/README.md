@@ -50,3 +50,20 @@ import { AppComponent } from './app.component';
     FormsModule
   ],
 ```
+
+- [x] Put inside of each input  ```ngModel``` !IMPORTANT.
+- [x] Added to every input ```#inputName="ngModel"```!IMPORTANT.
+```angular2html
+    <label>Phone number</label>
+    <div id="input-phone">
+      <input
+            name="phone"
+            #phone="ngModel"
+             type="email"
+             placeholder="Phone number"
+      ngModel>
+    </div>
+```
+-[ ] Added to every input 
+
+
