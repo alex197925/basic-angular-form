@@ -9,29 +9,38 @@
 </head>
 <body>
 <div class="container">
-  <div class="input-container">
-    <div class="input-fn">
+    <form id="input-container">
+      <label>First name</label>
+    <div id="input-fn">
       <input type="text" placeholder="First name">
     </div>
-    <div class="input-ln">
+      <label>Last name</label>
+    <div id="input-ln">
       <input type="text" placeholder="Last name">
     </div>
-    <div class="input-email">
+      <label>Email</label>
+    <div id="input-email">
       <input type="email" placeholder="Email">
     </div>
-    <div class="input-phone">
+      <label>Phone number</label>
+    <div id="input-phone">
       <input type="email" placeholder="Phone number">
     </div>
-    <div class="input-fl">
+      <label>Language</label>
+    <div id="input-fl">
       <input type="text" placeholder="Favourite language">
     </div>
-  </div>
+    </form>
+
   <select name="name" id="lg">
-    <option value="html">HTML</option>
-    <option value="php">PHP</option>
-    <option value="js">JS</option>
+    <option *ngFor="let language of languages">
+      {{language}}
+    </option>
   </select>
-  <button type="submit">Submit</button>
+
+
+
+  <button id="btn-submit" type="submit">Submit</button>
 </div>
 </body>
 </html>
