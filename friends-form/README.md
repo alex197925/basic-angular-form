@@ -30,3 +30,23 @@
     </option>
 ```
   [Angular Loop](https://www.delftstack.com/howto/angular/array-of-objects-in-angular/)
+- [x] In the app.module.ts i am imported FormsModule from @angular/forms on top of the page.
+```angular2html
+import { NgModule } from '@angular/core';
+----------------------------------------------------------
+import { BrowserModule } from '@angular/platform-browser';
+-----------------------------------------------------------
+import {FormsModule} from "@angular/forms";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+```
+- [x] An added BrowserModule to imports array
+```angular2html
+ imports: [
+---------------------------------------------------------
+    BrowserModule,
+---------------------------------------------------------
+    AppRoutingModule,
+    FormsModule
+  ],
+```
