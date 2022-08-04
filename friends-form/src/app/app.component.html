@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -8,39 +9,75 @@
   <title>Friends Form</title>
 </head>
 <body>
+
 <div class="container">
-    <form id="input-container">
+  <h1>Friends Form</h1>
+  {{ formName.value | json }}
+
+    <form  #formName="ngForm" id="input-container">
+
+<!--First Name-->
       <label>First name</label>
     <div id="input-fn">
-      <input type="text" placeholder="First name">
+      <input
+            name="firstName"
+            #firstName="ngModel"
+            id="firstName"
+            type="text"
+            placeholder="First name"
+      ngModel>
     </div>
+
+
+<!--      Last Name-->
       <label>Last name</label>
     <div id="input-ln">
-      <input type="text" placeholder="Last name">
+      <input
+            name="lastName"
+            #lastName="ngModel"
+            id="last-name"
+             type="text"
+             placeholder="Last name"
+      ngModel>
     </div>
+
+<!--      Email-->
       <label>Email</label>
     <div id="input-email">
-      <input type="email" placeholder="Email">
+      <input
+             name="email"
+             #email="ngModel"
+             id="email"
+             type="email"
+             placeholder="Email"
+      ngModel>
     </div>
+
+
+<!--      Phone number-->
       <label>Phone number</label>
     <div id="input-phone">
-      <input type="email" placeholder="Phone number">
+      <input
+            name="phone"
+            #phone="ngModel"
+             type="email"
+             placeholder="Phone number"
+      ngModel>
     </div>
-      <label>Language</label>
-    <div id="input-fl">
-      <input type="text" placeholder="Favourite language">
-    </div>
-    </form>
 
-  <select name="name" id="lg">
+<!--    Language  -->
+      <label>Language</label>
+
+<!--  Looping through an array-->
+  <select name="language"
+          #language="ngModel" id="lg" ngModel>
     <option *ngFor="let language of languages">
       {{language}}
-    </option>
+    </option >
+
   </select>
-
-
-
   <button id="btn-submit" type="submit">Submit</button>
+    </form>
 </div>
 </body>
 </html>
