@@ -64,6 +64,9 @@ import { AppComponent } from './app.component';
       ngModel>
     </div>
 ```
--[ ] Added to every input 
+- [x] Add to the form ```#formName="ngForm"``` !IMPORTANT
+```angular2html
+ <form  #formName="ngForm" id="input-container">
+```
 
 
