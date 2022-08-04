@@ -18,3 +18,15 @@
 ### Let's Do It
 - [x] In html file add inputs for the: First name, Last Name, Email, Phone number  with submit button
 - [x] Add  select input for the languages 
+- [x] Put languages inside of an array
+```angular2html
+ languages:Array<string> = ['HTML', 'JS', 'PHP', 'TypeScript'];
+```
+- [x] Using ngFor loop to generate all options
+```angular2html
+  <select name="name" id="lg">
+    <option *ngFor="let language of languages">
+      {{language}}
+    </option>
+```
+  [Angular Loop](https://www.delftstack.com/howto/angular/array-of-objects-in-angular/)
