@@ -130,5 +130,16 @@ export class Friend {
   }
 }
 ```
-  
+- [x] In the app.component.ts  i instantiated the friendModule through the friend class with all the properties set to null, add 0 to the property phone.
+```typescript
+ friendModel = new Friend('', '', '', 0, '');
+```
+- [x] Imported  Friend  class to app.component.js
+```typescript
+import {Friend} from "./friend";
+```
 
+#### Make changes in app.component.html file
+- [x] Changed ngModel in all inputs to ``[(ngModel)]="friendModel.propertyName"``
+- [ ] On the top of html file, changed ``{{ formName.value | json }}``
+to ```{{ friendModel | json }}``` ---- still working perfectly!!
