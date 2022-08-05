@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Friends Form</title>
 </head>
@@ -12,7 +15,7 @@
 
 <div class="container">
   <h1>Friends Form</h1>
-  {{ formName.value | json }}
+  {{ friendModel | json }}
 
     <form  #formName="ngForm" id="input-container">
 
@@ -25,7 +28,7 @@
             id="firstName"
             type="text"
             placeholder="First name"
-      ngModel>
+            [(ngModel)]="friendModel.firstName">
     </div>
 
 
@@ -34,11 +37,11 @@
     <div id="input-ln">
       <input
             name="lastName"
-            #lastName="ngModel"
+            #secondName="ngModel"
             id="last-name"
              type="text"
              placeholder="Last name"
-      ngModel>
+            [(ngModel)]="friendModel.secondName">
     </div>
 
 <!--      Email-->
@@ -50,7 +53,7 @@
              id="email"
              type="email"
              placeholder="Email"
-      ngModel>
+             [(ngModel)]="friendModel.email">
     </div>
 
 
@@ -62,7 +65,7 @@
             #phone="ngModel"
              type="email"
              placeholder="Phone number"
-      ngModel>
+            [(ngModel)]="friendModel.phone">
     </div>
 
 <!--    Language  -->
@@ -70,7 +73,7 @@
 
 <!--  Looping through an array-->
   <select name="language"
-          #language="ngModel" id="lg" ngModel>
+          #language="ngModel" id="lg" [(ngModel)]="friendModel.language">
     <option *ngFor="let language of languages">
       {{language}}
     </option >
