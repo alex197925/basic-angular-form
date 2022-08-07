@@ -141,5 +141,20 @@ import {Friend} from "./friend";
 
 #### Make changes in app.component.html file
 - [x] Changed ngModel in all inputs to ``[(ngModel)]="friendModel.propertyName"``
-- [ ] On the top of html file, changed ``{{ formName.value | json }}``
+- [x] On the top of html file, changed ``{{ formName.value | json }}``
 to ```{{ friendModel | json }}``` ---- still working perfectly!!
+
+#### Form Validation
+- [x] Created class .correct, .incorrect in css file. If input incorrect, border-red!
+- [x] Use this website for input validation
+ * [Validation website](https://regexr.com/3e48o)
+- [x] Displaying button when all inputs is filled correct
+- [x] Created function to display in console list of friends
+```typescript
+ getListOfFriends()  {
+    console.log(this.friendModel);
+  }
+```
+
+
+ 

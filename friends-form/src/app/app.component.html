@@ -16,9 +16,7 @@
 <div class="container">
   <h1>Friends Form</h1>
   {{ friendModel | json }}
-
-    <form  #formName="ngForm" id="input-container">
-
+    <form  #formName="ngForm" id="input-container" novalidate  (ngSubmit)="getListOfFriends()">
 <!--First Name-->
       <label>First name</label>
     <div id="input-fn">
@@ -28,9 +26,12 @@
             id="firstName"
             type="text"
             placeholder="First name"
-            [(ngModel)]="friendModel.firstName">
+            pattern="[a-zA-Z ]+"
+            [(ngModel)]="friendModel.firstName"
+            required
+            [class.correct]="firstName.valid && firstName.touched"
+            [class.incorrect]="firstName.invalid && firstName.touched">
     </div>
-
 
 <!--      Last Name-->
       <label>Last name</label>
@@ -38,10 +39,14 @@
       <input
             name="lastName"
             #secondName="ngModel"
-            id="last-name"
+            id="lastName"
              type="text"
              placeholder="Last name"
-            [(ngModel)]="friendModel.secondName">
+            pattern="[a-zA-Z ]+"
+            [(ngModel)]="friendModel.secondName"
+            required
+            [class.correct]="secondName.valid && secondName.touched"
+            [class.incorrect]="secondName.invalid && secondName.touched">
     </div>
 
 <!--      Email-->
@@ -53,7 +58,11 @@
              id="email"
              type="email"
              placeholder="Email"
-             [(ngModel)]="friendModel.email">
+             pattern="^[\w-.0-9]+@([\w-]+.)+[\w-]{2,4}$"
+             [(ngModel)]="friendModel.email"
+             required
+             [class.correct]="email.valid && email.touched"
+             [class.incorrect]="email.invalid && email.touched">
     </div>
 
 
@@ -65,7 +74,11 @@
             #phone="ngModel"
              type="email"
              placeholder="Phone number"
-            [(ngModel)]="friendModel.phone">
+             pattern="[0-9.-+]{10,}"
+            [(ngModel)]="friendModel.phone"
+            required
+            [class.correct]="phone.valid && phone.touched"
+            [class.incorrect]="phone.invalid && phone.touched">
     </div>
 
 <!--    Language  -->
@@ -73,14 +86,17 @@
 
 <!--  Looping through an array-->
   <select name="language"
-          #language="ngModel" id="lg" [(ngModel)]="friendModel.language">
+          #language="ngModel" id="lg" [(ngModel)]="friendModel.language" required>
     <option *ngFor="let language of languages">
       {{language}}
     </option >
 
   </select>
-  <button id="btn-submit" type="submit">Submit</button>
+  <button id="btn-submit" type="submit" class="btn btn-primary" [disabled]="formName.form.invalid">Submit</button>
     </form>
 </div>
+
+
+
 </body>
 </html>
