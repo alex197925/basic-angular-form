@@ -157,4 +157,36 @@ to ```{{ friendModel | json }}``` ---- still working perfectly!!
 ```
 
 
- 
+### Submit the data to a server
+*  add this friend to your friendlist server,
+- [x] Generate server with name "addFriendService"- input in terminal command
+``ng g s addFriend``.
+- [x] Importing HttpClient to the addFriend.service.ts file 
+* ```import { HttpClient } from '@angular/common/http';```
+- [x] Add a new private property called http to the constructor.Typehint it to be of type HttpClient
+```typescript
+export class AddFriend {
+  private http: HttpClient;
+  private url: string = '';
+
+
+  constructor(http: HttpClient) {
+    this.http = http;
+  }
+```
+- [x] Import the HttpClientModule in your app.module.ts,
+````typescript
+import { HttpClientModule } from '@angular/common/http';
+````
+- [x]  Add it to the imports array 
+```typescript
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
+```
