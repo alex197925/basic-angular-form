@@ -203,4 +203,11 @@ export class AddFriend {
 import {AddFriend} from "./add-friend.service";
 ```
 - [x] Created constructor, added private property "addFriendService".
-- 
+
+- [x] In app-friend.service.ts, created method call addFriend.In this method wrote post request.
+``this.http.post(url, data)``
+and return something called an observable
+* Observables provide support for passing messages between parts of your application. They are used frequently in Angular and are a technique for event handling, asynchronous programming, and handling multiple values.
+
+- [x] Import service to the  app.component.ts, created constructor and  add private property "addFriendService".
+
