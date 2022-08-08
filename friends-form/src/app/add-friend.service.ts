@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Friend} from "./friend";
@@ -8,7 +9,7 @@ import {Friend} from "./friend";
 })
 
 
-export class AddFriend {
+export class AddFriendService {
   private http: HttpClient;
   private url: string = '';
 
@@ -17,7 +18,7 @@ export class AddFriend {
     this.http = http;
   }
 
-  public addFriend(parameter: Friend){
-    this.http.post(url, data)
+  public addFriend(data: Friend){
+   return  this.http.post(this.url, data)
   }
 }

@@ -1,9 +1,16 @@
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Gothic A1', sans-serif;
+
 }
 
+/*Form Validation*/
+.correct {
+  background-color: yellow;
+}
+
+.incorrect {
+  border: 1px solid red;
+}
 
 .container {
   width: 100%;
@@ -21,18 +28,26 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
 
 label {
   margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 input {
-  width: 300px;
-  padding: 10px;
+  width: 403px;
+  padding: 12px;
   border-radius: 8px;
   outline: none;
-  border: 1px solid;
+  border: transparent;
+  color: dimgray;
+  font-size: 20px;
+}
+
+select {
+  outline: none;
 }
 
 
@@ -47,3 +62,5 @@ input {
   padding: 5px 22px;
   outline: none;
 }
+
+

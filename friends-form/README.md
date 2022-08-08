@@ -190,3 +190,17 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
 ```
+
+- [x] Created property url with empty string
+```typescript
+export class AddFriend {
+  private http: HttpClient;
+  private url: string = '';
+```
+
+- [x] In app.component.ts imported addFriendService
+```typescript
+import {AddFriend} from "./add-friend.service";
+```
+- [x] Created constructor, added private property "addFriendService".
+- 
