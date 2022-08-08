@@ -211,3 +211,33 @@ and return something called an observable
 
 - [x] Import service to the  app.component.ts, created constructor and  add private property "addFriendService".
 
+### Send data to the local api
+* When submit data and displaying in console, status 404! 
+But it's ok!!
+
+- [x] In server file change PORT: 6969 to PORT: 9000
+* from terminal inside of server folder run command ``node server``.
+* open you tab type http://localhost:9000/ and its working!!!
+* I see "Hello from server". That is because the get function in the server file with the root "/" as it's path sent it as a response.
+
+- [x] Created get function, to get all Friends.
+```typescript
+app.get ('/allFriends', function (request, response) {
+    response.send(allFriends);
+})
+```
+- [x] In the add-friend.service.ts in the class  AddFriendService 
+in private url: string = ''; changed to:
+````typescript
+export class AddFriendService {
+  private http: HttpClient;
+  private url: string = 'http://localhost:9000/';
+````
+- [x] Changed post method to:
+````typescript
+app.post('/allFriends', function (request, response) {
+    response.status(200).send({"message": "Data received"});
+    allFriends.push(request.body);
+});
+````
+* Now i can add new friend to array!!!
